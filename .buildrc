@@ -1,0 +1,35 @@
+# ============================================================
+#  模块项目配置
+#  放在项目根目录，build.sh / push.sh 会自动读取
+#  留空的项会自动扫描
+# ============================================================
+
+# 输出目录名（相对项目根目录）
+DIST_NAME="dist"
+
+# 要打包的文件（留空则自动扫描）
+# 建议显式列出，避免把 .git / dist / 脚本本身打进去
+PACK_FILES="
+module.prop
+customize.sh
+post-fs-data.sh
+post-mount.sh
+service.sh
+uninstall.sh
+bin/common.sh
+bin/bootanimctl.sh
+webroot/index.html
+webroot/theme.css
+"
+
+# 推送候选文件（留空则自动扫描，排除 .git / *.zip / build.sh / push.sh）
+# 一般和 PACK_FILES 一样
+PUSH_FILES="$PACK_FILES"
+
+# 变体（可选）
+# 格式：变体名:品牌:资源文件
+# 没有变体就留空
+VARIANTS="
+hyperos:xiaomi:payload/MIUI粒子效果.zip
+oneplus:oneplus:payload/MIUI粒子动画oneplus.zip
+"

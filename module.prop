@@ -1,0 +1,6 @@
+id=testmodule
+name=测试模块
+version=1.0
+versionCode=1
+author=test
+description=最小可用测试模块
